@@ -22,8 +22,32 @@ body{
     border-radius: 15px;
     box-shadow: 1px 1px 10px rgb(99, 99, 99);
     background: url("./sneha-0RPZ3qwrGjw-unsplash.jpg") center / cover ;
-    
 }
+
+.drizzle{
+    background-image: url("./drizzle.jpg");
+}
+
+.fog{
+    background-image: url("./fog.jpg");
+}
+
+.haze{
+    background-image: url("./haze.jpg");
+}
+
+.rain{
+    background-image: url("./rain.jpg");
+}
+
+.snow{
+    background-image: url("./snow.jpg");
+}
+
+.thunder{
+    background-image: url("./thunder.jpg");
+}
+
 
 .main{
     display: flex;
@@ -31,7 +55,7 @@ body{
     justify-content: space-between;
     color: rgb(255, 255, 255);
     padding: 20px;
-    backdrop-filter: blur(1px);
+    /* backdrop-filter: blur(1px); */
 }
 
 .place{
@@ -117,9 +141,9 @@ hr{
 
 
     .container{
-        grid-template-columns: 2fr;
-        grid-template-rows: 3fr 1fr;
-        height: 100vh;
+        grid-template-columns: 2fr 1fr;
+        /* grid-template-rows: 3fr 1fr; */
+        height: 99vh;
         width: 100vw;
         border-radius: 0px;        
     }
@@ -136,9 +160,15 @@ hr{
 #searchBox{
     height: 20px;
     width: 100px;
+display: none;
     border-radius: 15px;
     border: none;
     padding: 5px 15px;
+}
+
+.temp h1{
+    font-size: 5rem;
+    filter: drop-shadow(1px 1px 5px rgb(36, 36, 36));
 }
 
     .detail{
@@ -146,7 +176,7 @@ hr{
         backdrop-filter: blur(5px);
         border-radius: 0;
         padding: 15px;
-        padding-bottom: 30px;
+        padding-bottom: 10px;
     }
     
     .detail h2{

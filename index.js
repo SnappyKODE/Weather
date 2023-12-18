@@ -9,6 +9,7 @@ var sunrise = document.getElementById("sunrise");
 var sunset = document.getElementById("sunset");
 var btn = document.getElementById("subBtn");
 var cityIn =  document.getElementById("searchedCity");
+var bg = document.querySelector(".container");
 
 
 fetchWeather();
@@ -38,7 +39,26 @@ function fetchWeather(){
         console.log(c);
         Math.round(c.main.temp-272.15);
         temp.innerHTML = Math.round(c.main.temp-272.15);
-        description.innerHTML = (c.weather[0].description).toUpperCase();
+        description.innerHTML = (c.weather[0].main).toUpperCase();
+        if(c.weather[0].main == "Drizzle"){
+            bg.classList.add("drizzle");
+        }
+        if(c.weather[0].main == "Fog"){
+            bg.classList.add("fog");
+        }
+        if(c.weather[0].main == "Haze"){
+            bg.classList.add("haze");
+        }
+        if(c.weather[0].main == "Rain"){
+            bg.classList.add("rain");
+        }
+        if(c.weather[0].main == "Snow"){
+            bg.classList.add("snow");
+        }
+        if(c.weather[0].main == "Thunderstorm"){
+            bg.classList.add("thunder");
+        }
+        
         feelsLike.innerHTML = Math.round(c.main.feels_like-272.15);
         humidity.innerHTML = c.main.humidity;
         pressure.innerHTML = c.main.pressure;
