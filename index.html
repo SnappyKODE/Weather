@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Preahvihear&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Weather</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="main">
+            <div class="place">
+                <h2 id="searchedCity">LUCKNOW</h2>
+                <div id="search">
+                    <input id="searchBox" type="text" placeholder="City">
+                    <i id="subBtn" class='bx bx-search'></i>
+                </div>
+                
+            </div>
+            <div class="temp">
+                <h1><span id="temperature">32</span>°C</h1>
+                <h3 id="description">SUNNY</h3>
+                <p>Feel like <span id="feels">30</span>°C</p>
+            </div>
+        </div>
+        <div class="detail">
+            <h2>Weather Detail</h2>
+            <div >
+                <p>Humidity</p>
+                <p ><span id="humidity">47</span> %</p>
+            </div>
+            <hr>
+            <div>
+                <p>Pressure</p>
+                <p ><span id="pressure">1024</span> mb</p>
+            </div>
+            <hr>
+            <div>
+                <p>Wind Speed</p>
+                <p ><span id="wind">2.03</span> km/hr</p>
+            </div>
+            <hr>
+            <div>
+                <p>Sunrise</p>
+                <p id="sunrise">5:25</p>
+            </div>
+            <hr>
+            <div>
+                <p>Sunset</p>
+                <p id="sunset">6:20</p>
+            </div>
+        </div>
+    </div>
+
+    
+    
+    <!-- <input id="city" type="text">
+    <button id="sub" type="submit" >Search</button>
+    <p>temperature = <span id="temp"> </span>°C</p> -->
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script src="./index.js"></script>
+</body>
+</html>
