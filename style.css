@@ -21,33 +21,8 @@ body{
     width: 70vw;
     border-radius: 15px;
     box-shadow: 1px 1px 10px rgb(99, 99, 99);
-    background: url("./sneha-0RPZ3qwrGjw-unsplash.jpg") center / cover ;
+    /* background: url("./sneha-0RPZ3qwrGjw-unsplash.jpg") center / cover ; */
 }
-
-.drizzle{
-    background-image: url("./drizzle.jpg");
-}
-
-.fog{
-    background-image: url("./fog.jpg");
-}
-
-.haze{
-    background-image: url("./haze.jpg");
-}
-
-.rain{
-    background-image: url("./rain.jpg");
-}
-
-.snow{
-    background-image: url("./snow.jpg");
-}
-
-.thunder{
-    background-image: url("./thunder.jpg");
-}
-
 
 .main{
     display: flex;
@@ -141,10 +116,10 @@ hr{
 
 
     .container{
-        grid-template-columns: 2fr 1fr;
-        /* grid-template-rows: 3fr 1fr; */
-        height: calc(100vh-80px);
-        width: calc(100vw-70px);
+        grid-template-columns: 2fr;
+        grid-template-rows: 3fr 1fr;
+        height: 99vh;
+        width: 100vw ;
         border-radius: 0px;        
     }
     
@@ -153,17 +128,15 @@ hr{
     }
     
     .place i{
-        font-size: 1.1rem;
-        display: none;
+        font-size: 1rem;
     }
 
 #searchBox{
     height: 20px;
-    width: 100px;
-display: none;
+    width: 80px;
     border-radius: 15px;
     border: none;
-    padding: 5px 15px;
+    padding: 5px 10px;
 }
 
 .temp h1{

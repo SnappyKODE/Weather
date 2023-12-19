@@ -10,6 +10,13 @@ var sunset = document.getElementById("sunset");
 var btn = document.getElementById("subBtn");
 var cityIn =  document.getElementById("searchedCity");
 var bg = document.querySelector(".container");
+var defaultImg =["url('./img/default1.jpg') center / cover "
+,"url('./img/default2.jpg') center / cover "
+,"url('./img/default3.jpg') center / cover "];
+
+var cloudImg =["url('./img/cloud1.jpg') center / cover "
+,"url('./img/cloud2.jpg') center / cover "
+,"url('./img/cloud3.jpg') center / cover "];
 
 
 fetchWeather();
@@ -29,6 +36,35 @@ var formattedTime = hours + ':' + minutes.substr(-2);
 return formattedTime;
 }
 
+
+function weatherDes(w){
+        if(w == "Drizzle"){
+                bg.style.background = "url('./img/drizzle.jpg') center / cover "
+        }
+        else if(w == "Fog"){
+            bg.style.background = "url('./img/fog.jpg') center / cover "
+        }
+        else if(w == "Haze"){
+            bg.style.background = "url('./img/haze.jpg') center / cover "
+        }
+        else if(w == "Rain"){
+            bg.style.background = "url('./img/rain.jpg') center / cover "
+        }
+        else if(w == "Snow"){
+            bg.style.background = "url('./img/snow.jpg') center / cover "
+        }
+        else if(w == "Thunderstorm"){
+            bg.style.background = "url('./img/thunder.jpg') center / cover "
+        }
+        else if(w == "Clouds"){
+            bg.style.background = cloudImg[Math.floor(Math.random() * cloudImg.length)]
+        }
+        else{
+            bg.style.background = defaultImg[Math.floor(Math.random() * defaultImg.length)]
+        }
+}
+
+
 function fetchWeather(){
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=321950fcdddf706d0383f10195640ba9`)
     .then((response)=>{
@@ -40,25 +76,7 @@ function fetchWeather(){
         Math.round(c.main.temp-272.15);
         temp.innerHTML = Math.round(c.main.temp-272.15);
         description.innerHTML = (c.weather[0].main).toUpperCase();
-        if(c.weather[0].main == "Drizzle"){
-            bg.classList.add("drizzle");
-        }
-        if(c.weather[0].main == "Fog"){
-            bg.classList.add("fog");
-        }
-        if(c.weather[0].main == "Haze"){
-            bg.classList.add("haze");
-        }
-        if(c.weather[0].main == "Rain"){
-            bg.classList.add("rain");
-        }
-        if(c.weather[0].main == "Snow"){
-            bg.classList.add("snow");
-        }
-        if(c.weather[0].main == "Thunderstorm"){
-            bg.classList.add("thunder");
-        }
-        
+        weatherDes(c.weather[0].main);
         feelsLike.innerHTML = Math.round(c.main.feels_like-272.15);
         humidity.innerHTML = c.main.humidity;
         pressure.innerHTML = c.main.pressure;
@@ -68,20 +86,4 @@ function fetchWeather(){
     })
 
 }
-
-
-
-// key = 321950fcdddf706d0383f10195640ba9
-
-
-// btn.addEventListener("click",()=>{
-//     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=321950fcdddf706d0383f10195640ba9`)
-//     .then((response)=>{
-//         console.log(response);
-//         return response.json();
-
-//     }).then((c)=>{
-//         console.log(c)
-//     })
-// })
 
