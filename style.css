@@ -143,8 +143,8 @@ hr{
     .container{
         grid-template-columns: 2fr 1fr;
         /* grid-template-rows: 3fr 1fr; */
-        height: 99vh;
-        width: 100vw;
+        height: calc(100vh-80px);
+        width: calc(100vw-70px);
         border-radius: 0px;        
     }
     
